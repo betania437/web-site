@@ -1,0 +1,53 @@
+<html></html>
+<head>
+    <title>Mi Tabla</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr:nth-child(even) {
+            background-color:   
+ #f2f2f2;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>   
+
+<body>
+
+<h2>Mi Tabla de Datos</h2>
+
+<table>
+  <tr>
+    <th>imagen</th>
+    <th>nombre</th>
+    <th>descripcion</th>
+  </tr>
+  <tr>
+   
+   {% for usuarios in personas_list %}
+    <td><img src="{{ usuarios.imagen.url }}" width="300" height="300"></td>
+    <td>{{ usuarios.nombre }}</td>
+    <td>{{ usuarios.descripcion}}</td>
+  </tr>
+  {% endfor %}
+
+  <tr>
+
+
+  </tr>
+</table>
+
+</body>

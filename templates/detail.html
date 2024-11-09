@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .product-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f0fff0;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .product-card {
+            padding: 15px;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #00f5ff, #00ff7f);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            position: relative;
+        }
+        .product-title, .product-price, .product-description {
+            font-size: 20px;
+            color: #333;
+        }
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .buttons-container {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+        }
+        .btn-gold, .btn-silver {
+            padding: 10px 15px;
+            margin-left: 10px;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-gold {
+            background-color: gold;
+        }
+        .btn-silver {
+            background-color: silver;
+        }
+    </style>
+</head>
+<body>
+    <div class="product-container">
+        <div class="product-card">
+            <h1 class="product-title">{{post.titulo}}</h1>
+        </div>
+        {% if post.imagen %}
+        <img class="product-image" src="{{post.imagen.url}}" alt="Imagen del Producto">
+        <div class="product-card">
+
+            <p class="product-price">${{post.precio}}</p>
+        {% endif %}
+        </div>
+
+        <div class="product-card">
+            <p class="product-description">{{post.descripcion}}</p>
+            <div class="buttons-container">
+                <button class="btn-gold">Comprar</button>
+                <button class="btn-silver">Añadir al carrito</button>
+            </div>
+            <a href="{% url 'update' post.pk %}">Actualizar</a>
+            <a href="{% url 'delete' post.pk %}">Eliminar</a>
+            
+</body>
+        </div>
+    </div>
+</body>
+</html>

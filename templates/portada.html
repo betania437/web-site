@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página con Estilo</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #DDA0DD, #ADD8E6); /* Lilac to light blue gradient */
+        }
+
+        h2, h3 {
+            color: black;
+            font-family: 'Comic Sans MS', cursive;
+            text-transform: uppercase;
+            border: 2px solid purple;
+            padding: 10px;
+            background-color: lavender;
+        }
+
+        a {
+            color: purple;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <h2> ¡Hola {{ user.username }}!</h2>
+        <a href="{% url 'post' %}">NASA Messenger</a>
+    {% else %}
+        <h2>Si no tienes una cuenta</h2>
+        <h3>Ingresa tu usuario</h3>
+        <a href="{% url 'login' %}">Log in</a>
+        <h3>Registrate</h3>
+        <a href="{% url 'signup'%}">signup</a>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+<div class="card">
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Crear">
+    </form>
+  </div>
+  
+  <style>
+    body {
+      background: linear-gradient(to right, #add8e6, #8b0000); /* Degradado de azul claro a rojo oscuro */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+  
+    .card {
+      background-color: #f8f8ff; /* Color pastel */
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 60%;
+      text-align: center;
+    }
+  
+    form input[type="submit"] {
+      background-color: #8b4513; /* Botón marrón */
+      border: none;
+      border-radius: 5px;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  
+    form input[type="submit"]:hover {
+      background-color: #5a2d0c; /* Marrón oscuro al pasar el cursor */
+    }
+  </style>
+  
+

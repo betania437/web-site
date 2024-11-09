@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Interactiva</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Estilos de la navbar */
+        nav {
+            background-color: #db34bf; /* Rosado */
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            color: #1908d1;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        nav a:hover {
+            background-color: #5faee3; /* Azul más oscuro al pasar el ratón */
+        }
+
+        nav a.active {
+            background-color: #3ce7ab; /* Morado para el botón activo */
+            color: #040bda;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="{% url 'post' %}">Home</a>
+    <a href="{% url 'create' %}">Create</a>
+    <a href="#" class="active">Logout</a>
+   <form method="post" action="{% url 'logout' %}">
+       {% csrf_token %}
+       <input type="submit" value="Logout">
+       </form>
+</nav>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+
+
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit"value="Sign up">
+
+
+
+</form>
+form {
+    background-color: #f2f2f2; /* Soft gray background */
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  input[type="text"], input[type="password"] {
+    border-color: #ccc; /* Light gray border */
+    border-radius: 4px;
+    padding: 10px;
+  }
+  
+  input[type="submit"] {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: #3e8e41; /* Darker Red wine on hover */
+  }

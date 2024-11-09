@@ -1,0 +1,37 @@
+<style>
+    body {
+  background-color: #6a0dad; /* Fondo morado */
+}
+
+.card {
+  background-color: #ffe135; /* Amarillo */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 20px;
+}
+
+form input[type="submit"] {
+  background-color: #6a0dad; /* Botón morado */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+</style>
+
+<div class="card">
+    <form action="" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{form.as_p}}
+      <input type="submit" value="Actualizar">
+    </form>
+  </div>
+  

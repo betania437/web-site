@@ -1,0 +1,42 @@
+<div class="card">
+    <form action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Eliminar">
+    </form>
+  </div>
+  
+  <style>
+    body {
+      background-color: #6a0dad; /* Fondo morado */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+  
+    .card {
+      background-color: #da039a; /* Fucsia */
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      padding: 20px;
+      width: 45%;
+      text-align: center;
+    }
+  
+    form input[type="submit"] {
+      background-color: #6a0dad; /* Botón morado */
+      border: none;
+      border-radius: 5px;
+      color: rgb(39, 197, 232);
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  
+    form input[type="submit"]:hover {
+      background-color: #9e3e8f; /* Morado oscuro al pasar el cursor */
+    }
+  </style>
+  

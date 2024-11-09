@@ -1,10 +1,59 @@
+{% include 'navbar.html' %}
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicación de Producto</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .product-container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        .product-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .product-description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    {% for post in post_list %}
+    <div class="product-container">
+        <h1 class="product-title"><a href="{% url 'detail' post.pk %}">{{post.titulo}}</a></h1>
+        <p class="product-description"> {{post.descripcion}}</p>
+        <img class="product-image" src="ruta-de-la-imagen.jpg" alt="Imagen del Producto">
+    </div>
+    {% endfor %}
+
+    <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        <a href="{% url 'create' %}">Crear</a></button>
+</body>
+</html>
 
 
-{% for i in post_list %}
 
-    <h1>{{i.titulo}}</h1>
-    <br>
-    <p>{{i.descripcion}}</p>
-    <hr>
-    
-{% endfor %}
+<a href="{%url 'usuarios' %}">Dashboard de usuarios</a>
+
+
